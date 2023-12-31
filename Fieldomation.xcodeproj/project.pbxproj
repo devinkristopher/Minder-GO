@@ -1,0 +1,587 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E02C00702B4102830099A74C /* FieldomationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02C006F2B4102830099A74C /* FieldomationApp.swift */; };
+		E02C00722B4102830099A74C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02C00712B4102830099A74C /* ContentView.swift */; };
+		E02C00742B4102840099A74C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E02C00732B4102840099A74C /* Assets.xcassets */; };
+		E02C00772B4102840099A74C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E02C00762B4102840099A74C /* Preview Assets.xcassets */; };
+		E02C00812B4102840099A74C /* FieldomationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02C00802B4102840099A74C /* FieldomationTests.swift */; };
+		E02C008B2B4102840099A74C /* FieldomationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02C008A2B4102840099A74C /* FieldomationUITests.swift */; };
+		E02C008D2B4102840099A74C /* FieldomationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02C008C2B4102840099A74C /* FieldomationUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E02C007D2B4102840099A74C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E02C00642B4102830099A74C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E02C006B2B4102830099A74C;
+			remoteInfo = Fieldomation;
+		};
+		E02C00872B4102840099A74C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E02C00642B4102830099A74C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E02C006B2B4102830099A74C;
+			remoteInfo = Fieldomation;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E02C006C2B4102830099A74C /* Fieldomation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fieldomation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E02C006F2B4102830099A74C /* FieldomationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldomationApp.swift; sourceTree = "<group>"; };
+		E02C00712B4102830099A74C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E02C00732B4102840099A74C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E02C00762B4102840099A74C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E02C007C2B4102840099A74C /* FieldomationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FieldomationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E02C00802B4102840099A74C /* FieldomationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldomationTests.swift; sourceTree = "<group>"; };
+		E02C00862B4102840099A74C /* FieldomationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FieldomationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E02C008A2B4102840099A74C /* FieldomationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldomationUITests.swift; sourceTree = "<group>"; };
+		E02C008C2B4102840099A74C /* FieldomationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldomationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E02C00692B4102830099A74C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E02C00792B4102840099A74C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E02C00832B4102840099A74C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E02C00632B4102830099A74C = {
+			isa = PBXGroup;
+			children = (
+				E02C006E2B4102830099A74C /* Fieldomation */,
+				E02C007F2B4102840099A74C /* FieldomationTests */,
+				E02C00892B4102840099A74C /* FieldomationUITests */,
+				E02C006D2B4102830099A74C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E02C006D2B4102830099A74C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E02C006C2B4102830099A74C /* Fieldomation.app */,
+				E02C007C2B4102840099A74C /* FieldomationTests.xctest */,
+				E02C00862B4102840099A74C /* FieldomationUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E02C006E2B4102830099A74C /* Fieldomation */ = {
+			isa = PBXGroup;
+			children = (
+				E02C006F2B4102830099A74C /* FieldomationApp.swift */,
+				E02C00712B4102830099A74C /* ContentView.swift */,
+				E02C00732B4102840099A74C /* Assets.xcassets */,
+				E02C00752B4102840099A74C /* Preview Content */,
+			);
+			path = Fieldomation;
+			sourceTree = "<group>";
+		};
+		E02C00752B4102840099A74C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E02C00762B4102840099A74C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E02C007F2B4102840099A74C /* FieldomationTests */ = {
+			isa = PBXGroup;
+			children = (
+				E02C00802B4102840099A74C /* FieldomationTests.swift */,
+			);
+			path = FieldomationTests;
+			sourceTree = "<group>";
+		};
+		E02C00892B4102840099A74C /* FieldomationUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E02C008A2B4102840099A74C /* FieldomationUITests.swift */,
+				E02C008C2B4102840099A74C /* FieldomationUITestsLaunchTests.swift */,
+			);
+			path = FieldomationUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E02C006B2B4102830099A74C /* Fieldomation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E02C00902B4102840099A74C /* Build configuration list for PBXNativeTarget "Fieldomation" */;
+			buildPhases = (
+				E02C00682B4102830099A74C /* Sources */,
+				E02C00692B4102830099A74C /* Frameworks */,
+				E02C006A2B4102830099A74C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Fieldomation;
+			productName = Fieldomation;
+			productReference = E02C006C2B4102830099A74C /* Fieldomation.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E02C007B2B4102840099A74C /* FieldomationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E02C00932B4102840099A74C /* Build configuration list for PBXNativeTarget "FieldomationTests" */;
+			buildPhases = (
+				E02C00782B4102840099A74C /* Sources */,
+				E02C00792B4102840099A74C /* Frameworks */,
+				E02C007A2B4102840099A74C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E02C007E2B4102840099A74C /* PBXTargetDependency */,
+			);
+			name = FieldomationTests;
+			productName = FieldomationTests;
+			productReference = E02C007C2B4102840099A74C /* FieldomationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E02C00852B4102840099A74C /* FieldomationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E02C00962B4102840099A74C /* Build configuration list for PBXNativeTarget "FieldomationUITests" */;
+			buildPhases = (
+				E02C00822B4102840099A74C /* Sources */,
+				E02C00832B4102840099A74C /* Frameworks */,
+				E02C00842B4102840099A74C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E02C00882B4102840099A74C /* PBXTargetDependency */,
+			);
+			name = FieldomationUITests;
+			productName = FieldomationUITests;
+			productReference = E02C00862B4102840099A74C /* FieldomationUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E02C00642B4102830099A74C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1510;
+				LastUpgradeCheck = 1510;
+				TargetAttributes = {
+					E02C006B2B4102830099A74C = {
+						CreatedOnToolsVersion = 15.1;
+					};
+					E02C007B2B4102840099A74C = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = E02C006B2B4102830099A74C;
+					};
+					E02C00852B4102840099A74C = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = E02C006B2B4102830099A74C;
+					};
+				};
+			};
+			buildConfigurationList = E02C00672B4102830099A74C /* Build configuration list for PBXProject "Fieldomation" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E02C00632B4102830099A74C;
+			productRefGroup = E02C006D2B4102830099A74C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E02C006B2B4102830099A74C /* Fieldomation */,
+				E02C007B2B4102840099A74C /* FieldomationTests */,
+				E02C00852B4102840099A74C /* FieldomationUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E02C006A2B4102830099A74C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E02C00772B4102840099A74C /* Preview Assets.xcassets in Resources */,
+				E02C00742B4102840099A74C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E02C007A2B4102840099A74C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E02C00842B4102840099A74C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E02C00682B4102830099A74C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E02C00722B4102830099A74C /* ContentView.swift in Sources */,
+				E02C00702B4102830099A74C /* FieldomationApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E02C00782B4102840099A74C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E02C00812B4102840099A74C /* FieldomationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E02C00822B4102840099A74C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E02C008B2B4102840099A74C /* FieldomationUITests.swift in Sources */,
+				E02C008D2B4102840099A74C /* FieldomationUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E02C007E2B4102840099A74C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E02C006B2B4102830099A74C /* Fieldomation */;
+			targetProxy = E02C007D2B4102840099A74C /* PBXContainerItemProxy */;
+		};
+		E02C00882B4102840099A74C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E02C006B2B4102830099A74C /* Fieldomation */;
+			targetProxy = E02C00872B4102840099A74C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E02C008E2B4102840099A74C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E02C008F2B4102840099A74C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E02C00912B4102840099A74C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Fieldomation/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devinkristopher.Fieldomation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E02C00922B4102840099A74C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Fieldomation/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devinkristopher.Fieldomation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E02C00942B4102840099A74C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devinkristopher.FieldomationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fieldomation.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fieldomation";
+			};
+			name = Debug;
+		};
+		E02C00952B4102840099A74C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devinkristopher.FieldomationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fieldomation.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fieldomation";
+			};
+			name = Release;
+		};
+		E02C00972B4102840099A74C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devinkristopher.FieldomationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Fieldomation;
+			};
+			name = Debug;
+		};
+		E02C00982B4102840099A74C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devinkristopher.FieldomationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Fieldomation;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E02C00672B4102830099A74C /* Build configuration list for PBXProject "Fieldomation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E02C008E2B4102840099A74C /* Debug */,
+				E02C008F2B4102840099A74C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E02C00902B4102840099A74C /* Build configuration list for PBXNativeTarget "Fieldomation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E02C00912B4102840099A74C /* Debug */,
+				E02C00922B4102840099A74C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E02C00932B4102840099A74C /* Build configuration list for PBXNativeTarget "FieldomationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E02C00942B4102840099A74C /* Debug */,
+				E02C00952B4102840099A74C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E02C00962B4102840099A74C /* Build configuration list for PBXNativeTarget "FieldomationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E02C00972B4102840099A74C /* Debug */,
+				E02C00982B4102840099A74C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E02C00642B4102830099A74C /* Project object */;
+}
