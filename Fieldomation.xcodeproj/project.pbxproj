@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E02C00702B4102830099A74C /* FieldomationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02C006F2B4102830099A74C /* FieldomationApp.swift */; };
-		E02C00722B4102830099A74C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02C00712B4102830099A74C /* ContentView.swift */; };
 		E02C00742B4102840099A74C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E02C00732B4102840099A74C /* Assets.xcassets */; };
 		E02C00772B4102840099A74C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E02C00762B4102840099A74C /* Preview Assets.xcassets */; };
 		E02C00812B4102840099A74C /* FieldomationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02C00802B4102840099A74C /* FieldomationTests.swift */; };
 		E02C008B2B4102840099A74C /* FieldomationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02C008A2B4102840099A74C /* FieldomationUITests.swift */; };
 		E02C008D2B4102840099A74C /* FieldomationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02C008C2B4102840099A74C /* FieldomationUITestsLaunchTests.swift */; };
+		E0A9090C2B4D144E0050D003 /* example.txt in Resources */ = {isa = PBXBuildFile; fileRef = E0A9090B2B4D144E0050D003 /* example.txt */; };
+		E0A9090F2B4D22650050D003 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02C00992B4104DF0099A74C /* AppViewModel.swift */; };
+		E0A909102B4D226B0050D003 /* FieldomationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02C006F2B4102830099A74C /* FieldomationApp.swift */; };
+		E0A909112B4D226F0050D003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02C00712B4102830099A74C /* ContentView.swift */; };
+		E0A909122B4D22750050D003 /* DataScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02C009B2B410BAB0099A74C /* DataScannerView.swift */; };
+		E0A909132B4D227C0050D003 /* ItemSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A909092B4D0D4C0050D003 /* ItemSet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,11 @@
 		E02C00862B4102840099A74C /* FieldomationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FieldomationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E02C008A2B4102840099A74C /* FieldomationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldomationUITests.swift; sourceTree = "<group>"; };
 		E02C008C2B4102840099A74C /* FieldomationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldomationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E02C00992B4104DF0099A74C /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		E02C009B2B410BAB0099A74C /* DataScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataScannerView.swift; sourceTree = "<group>"; };
+		E0A909092B4D0D4C0050D003 /* ItemSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSet.swift; sourceTree = "<group>"; };
+		E0A9090B2B4D144E0050D003 /* example.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = example.txt; sourceTree = "<group>"; };
+		E0A9090D2B4D209A0050D003 /* example.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = example.txt; path = Fieldomation/example.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +83,7 @@
 		E02C00632B4102830099A74C = {
 			isa = PBXGroup;
 			children = (
+				E0A9090D2B4D209A0050D003 /* example.txt */,
 				E02C006E2B4102830099A74C /* Fieldomation */,
 				E02C007F2B4102840099A74C /* FieldomationTests */,
 				E02C00892B4102840099A74C /* FieldomationUITests */,
@@ -94,10 +104,14 @@
 		E02C006E2B4102830099A74C /* Fieldomation */ = {
 			isa = PBXGroup;
 			children = (
+				E0A9090B2B4D144E0050D003 /* example.txt */,
+				E02C00992B4104DF0099A74C /* AppViewModel.swift */,
 				E02C006F2B4102830099A74C /* FieldomationApp.swift */,
 				E02C00712B4102830099A74C /* ContentView.swift */,
+				E02C009B2B410BAB0099A74C /* DataScannerView.swift */,
 				E02C00732B4102840099A74C /* Assets.xcassets */,
 				E02C00752B4102840099A74C /* Preview Content */,
+				E0A909092B4D0D4C0050D003 /* ItemSet.swift */,
 			);
 			path = Fieldomation;
 			sourceTree = "<group>";
@@ -231,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0A9090C2B4D144E0050D003 /* example.txt in Resources */,
 				E02C00772B4102840099A74C /* Preview Assets.xcassets in Resources */,
 				E02C00742B4102840099A74C /* Assets.xcassets in Resources */,
 			);
@@ -257,8 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E02C00722B4102830099A74C /* ContentView.swift in Sources */,
-				E02C00702B4102830099A74C /* FieldomationApp.swift in Sources */,
+				E0A909132B4D227C0050D003 /* ItemSet.swift in Sources */,
+				E0A909122B4D22750050D003 /* DataScannerView.swift in Sources */,
+				E0A909112B4D226F0050D003 /* ContentView.swift in Sources */,
+				E0A909102B4D226B0050D003 /* FieldomationApp.swift in Sources */,
+				E0A9090F2B4D22650050D003 /* AppViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,11 +437,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Fieldomation/Preview Content\"";
+				DEVELOPMENT_TEAM = 377VHE5PDP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to scan barcodes.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -436,6 +458,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devinkristopher.Fieldomation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -447,11 +470,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Fieldomation/Preview Content\"";
+				DEVELOPMENT_TEAM = 377VHE5PDP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to scan barcodes.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -464,6 +491,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devinkristopher.Fieldomation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
