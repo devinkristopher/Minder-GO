@@ -97,6 +97,7 @@ struct ContentView: View {
                 .font(.headline)
             if vm.scanType == .barcode {
                 Toggle("Simultaneous object recognition", isOn: $vm.recognizesMultipleItems)
+                Toggle("Display hyperlink on recognition", isOn: $vm.displayHyperlink)
             }
             if vm.scanType == .format {
                 Toggle("Prepend Minder URL Path", isOn: $vm.prependsMinderURLPath)
@@ -121,10 +122,7 @@ struct ContentView: View {
         }.padding(.horizontal)
     }
     let scanData: [ScanData] = [
-            ScanData(asset: "Day 1"),
-            ScanData(asset: "Day 2"),
-            ScanData(asset: "Day 3"),
-            ScanData(asset: "Day 4")
+            ScanData(asset: " Asset Scan with Minder GO")
         ]
 
     func generateCSV() -> URL {
@@ -152,7 +150,7 @@ struct ContentView: View {
                                                        appropriateFor: nil,
                                                        create: false)
                 
-                fileURL = path.appendingPathComponent("Trip-Data.csv")
+                fileURL = path.appendingPathComponent("Minder GO Scan @ " + heading + ".csv")
                 
                 // append string data to file
                 try stringData.write(to: fileURL, atomically: true , encoding: .utf8)
@@ -205,9 +203,12 @@ struct ContentView: View {
                     ForEach(vm.recognizedItems) { item in
                         switch item {
                         case .barcode(let barcode):
-                            // Commented line below shows clickable URL to miner
-                            // Text("https://v2.minder.io/miner/\(barcode.payloadStringValue ?? "Unknown barcode")")
-                            Text("\(barcode.payloadStringValue ?? "Unknown barcode")")
+                            switch (vm.displayHyperlink) {
+                            case true:
+                                Text("https://v2.minder.io/miner/\(barcode.payloadStringValue ?? "Unknown barcode")")
+                            default:
+                                Text("\(barcode.payloadStringValue ?? "Unknown barcode")")
+                            }
                         case .text(let text):
                             Text(text.transcript)
                             

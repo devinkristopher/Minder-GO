@@ -26,6 +26,7 @@ final class AppViewModel: ObservableObject {
     @Published var textContentType: DataScannerViewController.TextContentType?
     @Published var recognizesMultipleItems = true
     @Published var prependsMinderURLPath = true
+    @Published var displayHyperlink = false
     
     var recognizedDataType: DataScannerViewController.RecognizedDataType {
         scanType == .barcode ? .barcode() : .text(textContentType: textContentType)
