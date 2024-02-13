@@ -60,20 +60,20 @@ struct DataScannerView: UIViewControllerRepresentable {
             print("didAddItems \(addedItems)")
             let strDesc = addedItems.description
             print("----------------")
-            print(strDesc[strDesc.range(of: "Optional")!.lowerBound])
-            print(strDesc[strDesc.range(of: "), observation:")!.lowerBound])
-            print(strDesc[strDesc.index(strDesc.range(of: "Optional")!.lowerBound, offsetBy: 10)])
+            // print(strDesc[strDesc.range(of: "Optional")!.lowerBound])
+            // print(strDesc[strDesc.range(of: "), observation:")!.lowerBound])
+            // print(strDesc[strDesc.index(strDesc.range(of: "Optional")!.lowerBound, offsetBy: 10)])
             
-            let start = strDesc.index(strDesc.range(of: "Optional")!.lowerBound, offsetBy: 10)
-            let end = strDesc.index(strDesc.range(of: "), observation:")!.lowerBound, offsetBy: -1)
-            let range = start..<end
-
-            var mySubstring = strDesc[range]
-            print(mySubstring)
-            
+            if (strDesc.range(of: "Optional") != nil) {
+                let start = strDesc.index(strDesc.range(of: "Optional")!.lowerBound, offsetBy: 10)
+                let end = strDesc.index(strDesc.range(of: "), observation:")!.lowerBound, offsetBy: -1)
+                let range = start..<end
+                var mySubstring = strDesc[range]
+                itemSet.insert(str: String(mySubstring))
+            }
+   
             
             print("----------------")
-            itemSet.insert(str: String(mySubstring))
             print("added to set")
             print("****************")
             print(itemSet.toString())
