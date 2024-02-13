@@ -29,7 +29,11 @@ final class AppViewModel: ObservableObject {
     @Published var displayHyperlink = false
     
     var recognizedDataType: DataScannerViewController.RecognizedDataType {
-        scanType == .barcode ? .barcode() : .text(textContentType: textContentType)
+        // This line will allow the scanner to recognize text when not in the Scan tab.
+        // It is raw, heavy, uninhibited text recognition. If using text mode, please restrict it to
+        // asset tags somehow!
+        // scanType == .barcode ? .barcode() : .text(textContentType: textContentType)
+        scanType == .barcode ? .barcode() : .barcode()
     }
     
     var headerText: String {
@@ -50,6 +54,7 @@ final class AppViewModel: ObservableObject {
         }
         else {
             return scanType.rawValue
+            
         }
             
     }
