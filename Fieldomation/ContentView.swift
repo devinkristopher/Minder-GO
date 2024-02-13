@@ -193,6 +193,14 @@ struct ContentView: View {
     }
     
     
+    func link(_ label: String, _ url: String) -> AttributedString {
+
+        var attrStr = AttributedString(label)
+        attrStr.link = URL(string: url)
+        return attrStr
+    }
+    
+    
     
     @ViewBuilder
     private var bottomContainerView: some View {
@@ -205,7 +213,8 @@ struct ContentView: View {
                         case .barcode(let barcode):
                             switch (vm.displayHyperlink) {
                             case true:
-                                Text("https://v2.minder.io/miner/\(barcode.payloadStringValue ?? "Unknown barcode")")
+                                Text(link("Open in Minder", "https://v2.minder.io/miner/\(barcode.payloadStringValue ?? "Unknown barcode")"))
+                                // Text("https://v2.minder.io/miner/\(barcode.payloadStringValue ?? "Unknown barcode")")
                             default:
                                 Text("\(barcode.payloadStringValue ?? "Unknown barcode")")
                             }
