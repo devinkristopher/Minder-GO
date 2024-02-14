@@ -89,9 +89,7 @@ struct ContentView: View {
                     .tag(ScanType.export)
                 }
                 .pickerStyle(.segmented)
-                
             }
-            .padding(.top)
             Text(vm.headerText)
                 .padding(.top)
                 .textCase(.uppercase)
@@ -142,7 +140,6 @@ struct ContentView: View {
                     
                     ScrollView {
                         Text(mySetString)
-                            .fixedSize(horizontal: false, vertical: true)
                             .padding(16)
                             .frame(
                                 minWidth: 0,
@@ -158,7 +155,10 @@ struct ContentView: View {
                 
                 
             }
-        }.padding(.horizontal)
+        }
+        .padding(.horizontal)
+        .padding(.top)
+        
     }
         
     let scanData: [ScanData] = [
