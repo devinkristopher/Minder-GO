@@ -87,10 +87,11 @@ struct ContentView: View {
 
                     }
                     .tag(ScanType.export)
-                }.pickerStyle(.segmented)
+                }
+                .pickerStyle(.segmented)
                 
-            }.padding(.top)
-            
+            }
+            .padding(.top)
             Text(vm.headerText)
                 .padding(.top)
                 .textCase(.uppercase)
@@ -103,24 +104,63 @@ struct ContentView: View {
                 Toggle("Prepend Minder URL Path", isOn: $vm.prependsMinderURLPath)
             }
             if vm.scanType == .export {
-                
-                Text(mySetString)
-                
-                Button("Preview List", action: { readSetFromFile() })
-                Button {
-                action: do { readSetFromFile() }
-                } label: {
-                    Image(systemName: "list.bullet.rectangle.fill")
-                        .font(.system(size: 60))
+                LazyVStack {
+                    HStack {
+                        
+                        Spacer()
+                        
+                        VStack {
+                              Button(action: {
+                                  readSetFromFile()
+                              }) {
+                                Label("Generate", systemImage: "sparkles")
+                                  .padding()
+                                  .foregroundColor(.white)
+                                  .background(LinearGradient(colors: [Color.purple, Color.indigo], startPoint: .topLeading, endPoint: .bottomTrailing))
+                                  .cornerRadius(50)
+                                  .fontDesign(.rounded)
+                                  .textCase(.uppercase)
+                                  .font(.subheadline)
+                                  .tracking(2.5)
+                              }
+                            }
+                        Spacer()
+                                .overlay(
+                                    ShareLink(item:generateCSV()) {
+                                        Image(systemName: "square.and.arrow.up.circle.fill")
+                                            .font(.system(size: 50))
+                                    }
+                                    .padding(.leading) // << here can be any distance to center button
+                                )
+                        
+                        
+                        
+                        
+                        
+                    }
+                    
+                    
+                    ScrollView {
+                        Text(mySetString)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .padding(16)
+                            .frame(
+                                minWidth: 0,
+                                maxWidth: .infinity,
+                                minHeight: 0,
+                                maxHeight: .infinity,
+                                alignment: .center)
+                        
+                    }
+                    
                 }
-                ShareLink(item:generateCSV()) {
-                    Image(systemName: "list.bullet.rectangle.portrait")
-                        .font(.system(size: 60))
-                }
+                
+                
                 
             }
         }.padding(.horizontal)
     }
+        
     let scanData: [ScanData] = [
             ScanData(asset: " Asset Scan with Minder GO")
         ]
@@ -212,9 +252,11 @@ struct ContentView: View {
                             switch (vm.displayHyperlink) {
                             case true:
                                 // This uses the link function, displaying a clickable link.
-                                Text(link("Open in Minder", "https://v2.minder.io/miner/\(barcode.payloadStringValue ?? "Unknown barcode")"))
+                                Text(link("Open \(barcode.payloadStringValue ?? "miner") in Minder", "https://v2.minder.io/miner/\(barcode.payloadStringValue ?? "Unknown barcode")"))
+                                    .frame(maxWidth: .infinity, alignment: .center)
                             default:
                                 Text("\(barcode.payloadStringValue ?? "Unknown barcode")")
+                                    .frame(maxWidth: .infinity, alignment: .center)
                             }
                         case .text(let text):
                             Text(text.transcript)
