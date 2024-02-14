@@ -75,16 +75,17 @@ struct ContentView: View {
                         Image(systemName: "barcode.viewfinder")
                     }
                     .tag(ScanType.barcode)
+                    
                     Button {
                     } label: {
                         Image(systemName: "rectangle.and.pencil.and.ellipsis")
                     }
                     .tag(ScanType.format)
+                    
                     Button {
                     } label: {
                         Image(systemName: "printer.fill")
                             .font(.system(size: 60))
-
                     }
                     .tag(ScanType.export)
                 }
@@ -95,46 +96,46 @@ struct ContentView: View {
                 .font(.headline)
                 .padding(.bottom)
             if vm.scanType == .barcode {
-                Toggle("Simultaneous object recognition", isOn: $vm.recognizesMultipleItems)
-                Toggle("Display hyperlink on recognition", isOn: $vm.displayHyperlink)
-            }
-            if vm.scanType == .format {
-                Toggle("Prepend Minder URL Path", isOn: $vm.prependsMinderURLPath)
-            }
-            if vm.scanType == .export {
                 VStack {
-                    HStack {
-                        Spacer()
-                        VStack {
-                              Button(action: {
-                                  readSetFromFile()
-                              }) {
-                                Label("Generate", systemImage: "sparkles")
-                                  .padding()
-                                  .foregroundColor(.white)
-                                  .background(LinearGradient(colors: [Color.purple, Color.indigo], startPoint: .topLeading, endPoint: .bottomTrailing))
-                                  .cornerRadius(50)
-                                  .fontDesign(.rounded)
-                                  .textCase(.uppercase)
-                                  .font(.subheadline)
-                                  .tracking(2.5)
-                              }
-                            }
-                        Spacer()
-                                .overlay(
-                                    ShareLink(item:generateCSV()) {
-                                        Image(systemName: "square.and.arrow.up.circle.fill")
-                                            .font(.system(size: 50))
-                                    }
-                                    .padding(.leading)
-                                )
-                    }
-                    .padding(.bottom)
-                    ScrollView {
-                        Text(mySetString)
-                    }
+                    Toggle("Simultaneous object recognition", isOn: $vm.recognizesMultipleItems)
+                    Toggle("Display hyperlink on recognition", isOn: $vm.displayHyperlink)
                 }
             }
+            if vm.scanType == .format {
+                VStack{
+                    Toggle("Prepend Minder URL Path", isOn: $vm.prependsMinderURLPath)
+                }
+            }
+            if vm.scanType == .export {
+                HStack {
+                    Spacer()
+                    VStack {
+                          Button(action: {
+                              readSetFromFile()
+                          }) {
+                            Label("Generate", systemImage: "sparkles")
+                              .padding()
+                              .foregroundColor(.white)
+                              .background(LinearGradient(colors: [Color.purple, Color.indigo], startPoint: .topLeading, endPoint: .bottomTrailing))
+                              .cornerRadius(50)
+                              .fontDesign(.rounded)
+                              .textCase(.uppercase)
+                              .font(.subheadline)
+                              .tracking(2.5)
+                          }
+                        }
+                    Spacer()
+                            .overlay(
+                                ShareLink(item:generateCSV()) {
+                                    Image(systemName: "square.and.arrow.up.circle.fill")
+                                        .font(.system(size: 50))
+                                }
+                                .padding(.leading)
+                            )
+                }
+                .padding(.bottom)
+            }
+            
         }
         .padding(.horizontal)
         .padding(.top)
@@ -222,32 +223,55 @@ struct ContentView: View {
     private var bottomContainerView: some View {
         VStack {
             headerView
-            ScrollView {
-                LazyVStack(alignment: .leading, spacing: 16) {
-                    ForEach(vm.recognizedItems) { item in
-                        switch item {
-                        case .barcode(let barcode):
-                            switch (vm.displayHyperlink) {
-                            case true:
-                                // This uses the link function, displaying a clickable link.
-                                Text(link("Open \(barcode.payloadStringValue ?? "miner") in Minder", "https://v2.minder.io/miner/\(barcode.payloadStringValue ?? "Unknown barcode")"))
-                                    .frame(maxWidth: .infinity, alignment: .center)
-                            default:
-                                Text("\(barcode.payloadStringValue ?? "Unknown barcode")")
-                                    .frame(maxWidth: .infinity, alignment: .center)
+            
+            if vm.scanType == .barcode {
+                ScrollView {
+                    LazyVStack(alignment: .leading, spacing: 16) {
+                        ForEach(vm.recognizedItems) { item in
+                            switch item {
+                            case .barcode(let barcode):
+                                switch (vm.displayHyperlink) {
+                                case true:
+                                    // This uses the link function, displaying a clickable link.
+                                    Text(link("Open \(barcode.payloadStringValue ?? "miner") in Minder", "https://v2.minder.io/miner/\(barcode.payloadStringValue ?? "Unknown barcode")"))
+                                        .frame(maxWidth: .infinity, alignment: .center)
+                                default:
+                                    Text("\(barcode.payloadStringValue ?? "Unknown barcode")")
+                                        .frame(maxWidth: .infinity, alignment: .center)
+                                }
+                            case .text(let text):
+                                Text(text.transcript)
+                                
+                            @unknown default:
+                                Text("Unknown")
                             }
-                        case .text(let text):
-                            Text(text.transcript)
                             
-                        @unknown default:
-                            Text("Unknown")
+                            
                         }
-                        
-                        
+                    }
+                    .padding()
+                }
+                
+            }
+            if vm.scanType == .format {
+                VStack {
+                    ScrollView {
+                        Text(setRows.count.description + " assets scanned")
+                        ForEach (0..<setRows.count, id: \.self) { i in
+                            Text(setRows[i])
+                        }
+
                     }
                 }
-                .padding()
             }
+            if vm.scanType == .export {
+                VStack {
+                    ScrollView {
+                        Text(mySetString)
+                    }
+                }
+            }
+            
         }
     }
     
