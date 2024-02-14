@@ -7,6 +7,7 @@
 import SafariServices
 import SwiftUI
 import VisionKit
+import AVFoundation
 
 struct ScanData {
     var asset: String
@@ -50,7 +51,7 @@ struct ContentView: View {
         .sheet(isPresented: .constant(true)) {
             bottomContainerView
                 .background(.ultraThinMaterial)
-                .presentationDetents([.medium, .fraction(0.25)])
+                .presentationDetents([.medium, .fraction(0.33)])
                 .presentationDragIndicator(.visible)
                 .interactiveDismissDisabled()
                 .onAppear {
@@ -92,6 +93,7 @@ struct ContentView: View {
                     readSetFromFile()
                 }
                 .pickerStyle(.segmented)
+                .padding(.top)
                 
             }
             Text(vm.headerText)
@@ -99,6 +101,18 @@ struct ContentView: View {
                 .font(.headline)
                 .padding(.bottom)
             if vm.scanType == .barcode {
+                HStack {
+                    Spacer()
+                    VStack {
+                        Button(action: {
+                            toggleTorch()
+                        }) {
+                            Image(systemName: "flashlight.on.circle.fill")
+                                .font(.system(size: 50))
+                        }
+                    }
+                    Spacer()
+                }
                 VStack {
                     Toggle("Simultaneous object recognition", isOn: $vm.recognizesMultipleItems)
                     Toggle("Display hyperlink on recognition", isOn: $vm.displayHyperlink)
@@ -224,6 +238,28 @@ struct ContentView: View {
         attrStr.link = URL(string: url)
         return attrStr
     }
+    
+    func toggleTorch() {
+        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInTripleCamera, .builtInDualWideCamera, .builtInUltraWideCamera, .builtInWideAngleCamera, .builtInTrueDepthCamera], mediaType: AVMediaType.video, position: .back)
+            guard let device = deviceDiscoverySession.devices.first else {return}
+
+            if device.hasTorch && device.isTorchAvailable {
+                do {
+                    try device.lockForConfiguration()
+                    if device.torchMode == .off {
+                        try device.setTorchModeOn(level: 1.0) // adjust torch intensity here
+                    } else {
+                        device.torchMode = .off
+                    }
+                    device.unlockForConfiguration()
+                } catch {
+                    print("Torch could not be used")
+                }
+            } else {
+                print("Torch is not available")
+            }
+        }
+
     
     @ViewBuilder
     private var bottomContainerView: some View {

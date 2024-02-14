@@ -19,7 +19,7 @@ struct DataScannerView: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> DataScannerViewController {
         let vc = DataScannerViewController(
             recognizedDataTypes: [recognizedDataType],
-            qualityLevel: .balanced,
+            qualityLevel: .accurate,
             recognizesMultipleItems: recognizesMultipleItems,
             isGuidanceEnabled: true,
             isHighlightingEnabled: true
