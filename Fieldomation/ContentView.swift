@@ -107,6 +107,9 @@ struct ContentView: View {
             if vm.scanType == .format {
                 VStack{
                     Toggle("Prepend Minder URL Path", isOn: $vm.prependsMinderURLPath)
+                        .onChange(of: vm.prependsMinderURLPath) {
+                            readSetFromFile()
+                        }
                 }
             }
             if vm.scanType == .export {
