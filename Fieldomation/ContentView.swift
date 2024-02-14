@@ -126,25 +126,18 @@ struct ContentView: View {
                             readSetFromFile()
                         }
                 }
+                HStack {
+                    Text(setRows.count == 1 ? "\(setRows.count.description)" + " asset" : "\(setRows.count.description)" + " assets")
+                        .font(.system(size: 34, design: .rounded))
+                    Spacer()
+                    Spacer()
+                }
             }
             if vm.scanType == .export {
                 HStack {
+                    Text(setRows.count == 1 ? "\(setRows.count.description)" + " asset" : "\(setRows.count.description)" + " assets")
+                        .font(.system(size: 34, design: .rounded))
                     Spacer()
-                    VStack {
-                          Button(action: {
-                              readSetFromFile()
-                          }) {
-                            Label("Generate", systemImage: "sparkles")
-                              .padding()
-                              .foregroundColor(.white)
-                              .background(LinearGradient(colors: [Color.purple, Color.indigo], startPoint: .topLeading, endPoint: .bottomTrailing))
-                              .cornerRadius(50)
-                              .fontDesign(.rounded)
-                              .textCase(.uppercase)
-                              .font(.subheadline)
-                              .tracking(2.5)
-                          }
-                        }
                     Spacer()
                             .overlay(
                                 ShareLink(item:generateCSV()) {
@@ -155,9 +148,7 @@ struct ContentView: View {
                                 .padding(.leading)
                             )
                 }
-                .padding(.bottom)
             }
-            
         }
         .padding(.horizontal)
         .padding(.top)
@@ -171,8 +162,11 @@ struct ContentView: View {
             var fileURL: URL!
             
         let time = NSDate().timeIntervalSince1970
-        let myTimeInterval = TimeInterval(time)
-        let heading = NSDate(timeIntervalSince1970: TimeInterval(myTimeInterval)).description
+        // offsetting time based on local time zone
+        let myTimeInterval = TimeInterval(time) + Double(TimeZone.current.secondsFromGMT())
+        var heading = NSDate(timeIntervalSince1970: TimeInterval(myTimeInterval)).description.replacingOccurrences(of: "+0000", with: "")
+        heading.append((TimeZone.current.abbreviation()?.description ?? "GMT-???"))
+        print(heading)
         
             // file rows
         var rows = scanData.map { "\($0.asset)" }
@@ -269,7 +263,6 @@ struct ContentView: View {
     private var bottomContainerView: some View {
         VStack {
             headerView
-            
             if vm.scanType == .barcode {
                 ScrollView {
                     LazyVStack(alignment: .leading, spacing: 16) {
@@ -301,23 +294,24 @@ struct ContentView: View {
             }
             if vm.scanType == .format {
                 VStack {
-                    ScrollView {
-                        
-                        Text(setRows.count == 1 ? "\(setRows.count.description)" + " asset scanned" : "\(setRows.count.description)" + " assets scanned")
-                        
-                        //Text(setRows.count.description + setRows.count == 1 ?? "asset ", : "assets " + "scanned")
+                    List {
                         ForEach (0..<setRows.count, id: \.self) { i in
                             Text(setRows[i])
                         }
-
+                        
                     }
+                    .scrollContentBackground(.hidden)
                 }
             }
             if vm.scanType == .export {
                 VStack {
-                    ScrollView {
-                        Text(mySetString)
+                    List {
+                        ForEach (0..<setRows.count, id: \.self) { i in
+                            Text(setRows[i])
+                        }
+                        
                     }
+                    .scrollContentBackground(.hidden)
                 }
             }
             
