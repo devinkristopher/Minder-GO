@@ -12,6 +12,7 @@
 		E02C00812B4102840099A74C /* FieldomationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02C00802B4102840099A74C /* FieldomationTests.swift */; };
 		E02C008B2B4102840099A74C /* FieldomationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02C008A2B4102840099A74C /* FieldomationUITests.swift */; };
 		E02C008D2B4102840099A74C /* FieldomationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02C008C2B4102840099A74C /* FieldomationUITestsLaunchTests.swift */; };
+		E066929B2B7D03A5005AC52D /* scantone.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E066929A2B7D03A5005AC52D /* scantone.m4a */; };
 		E0A9090C2B4D144E0050D003 /* example.txt in Resources */ = {isa = PBXBuildFile; fileRef = E0A9090B2B4D144E0050D003 /* example.txt */; };
 		E0A9090F2B4D22650050D003 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02C00992B4104DF0099A74C /* AppViewModel.swift */; };
 		E0A909102B4D226B0050D003 /* FieldomationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02C006F2B4102830099A74C /* FieldomationApp.swift */; };
@@ -50,6 +51,7 @@
 		E02C008C2B4102840099A74C /* FieldomationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldomationUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E02C00992B4104DF0099A74C /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		E02C009B2B410BAB0099A74C /* DataScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataScannerView.swift; sourceTree = "<group>"; };
+		E066929A2B7D03A5005AC52D /* scantone.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = scantone.m4a; sourceTree = "<group>"; };
 		E0A909092B4D0D4C0050D003 /* ItemSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSet.swift; sourceTree = "<group>"; };
 		E0A9090B2B4D144E0050D003 /* example.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = example.txt; sourceTree = "<group>"; };
 		E0A9090D2B4D209A0050D003 /* example.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = example.txt; path = Fieldomation/example.txt; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		E02C00632B4102830099A74C = {
 			isa = PBXGroup;
 			children = (
+				E066929A2B7D03A5005AC52D /* scantone.m4a */,
 				E0A9090D2B4D209A0050D003 /* example.txt */,
 				E02C006E2B4102830099A74C /* Fieldomation */,
 				E02C007F2B4102840099A74C /* FieldomationTests */,
@@ -245,6 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E066929B2B7D03A5005AC52D /* scantone.m4a in Resources */,
 				E0A9090C2B4D144E0050D003 /* example.txt in Resources */,
 				E02C00772B4102840099A74C /* Preview Assets.xcassets in Resources */,
 				E02C00742B4102840099A74C /* Assets.xcassets in Resources */,

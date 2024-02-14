@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 import VisionKit
 import Observation
+import AVFAudio
+import AVFoundation
 
 struct DataScannerView: UIViewControllerRepresentable {
     @Binding var recognizedItems: [RecognizedItem]
@@ -26,6 +28,7 @@ struct DataScannerView: UIViewControllerRepresentable {
         )
         return vc
     }
+    
     
     func updateUIViewController(_ uiViewController: DataScannerViewController, context: Context) {
         uiViewController.delegate = context.coordinator
@@ -54,6 +57,7 @@ struct DataScannerView: UIViewControllerRepresentable {
             print("didTapOn \(item)")
         }
         
+        
         func dataScanner(_ dataScanner: DataScannerViewController, didAdd addedItems: [RecognizedItem], allItems: [RecognizedItem]) {
             UINotificationFeedbackGenerator().notificationOccurred(.success)
             recognizedItems.append(contentsOf: addedItems)
@@ -78,6 +82,7 @@ struct DataScannerView: UIViewControllerRepresentable {
             print("****************")
             print(itemSet.toString())
             print("going to write " + itemSet.toString() + " to file")
+            
             
             let file = "setdata.txt" //this is the file. we will write to and read from it
 

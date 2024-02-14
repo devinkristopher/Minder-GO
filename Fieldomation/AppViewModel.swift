@@ -19,7 +19,6 @@ enum DataScannerAccessStatusType {
 @MainActor
 final class AppViewModel: ObservableObject {
     @State var myStuff = ""
-    
     @Published var dataScannerAccessStatus: DataScannerAccessStatusType = .notDetermined
     @Published var recognizedItems: [RecognizedItem] = []
     @Published var scanType: ScanType = .barcode
@@ -50,6 +49,7 @@ final class AppViewModel: ObservableObject {
             }
             else {
                 return "Recognized \(recognizedItems.count)!"
+                
             }
         }
         else {
@@ -72,6 +72,8 @@ final class AppViewModel: ObservableObject {
     private var isScannerAvailable: Bool {
         DataScannerViewController.isAvailable && DataScannerViewController.isSupported
     }
+    
+
     
     func requestDataScannerAccessStatus() async {
         guard UIImagePickerController.isSourceTypeAvailable(.camera) else {

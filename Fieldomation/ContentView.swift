@@ -51,7 +51,7 @@ struct ContentView: View {
         .sheet(isPresented: .constant(true)) {
             bottomContainerView
                 .background(.ultraThinMaterial)
-                .presentationDetents([.medium, .fraction(0.33)])
+                .presentationDetents([.medium, .fraction(0.38)])
                 .presentationDragIndicator(.visible)
                 .interactiveDismissDisabled()
                 .onAppear {
@@ -109,6 +109,7 @@ struct ContentView: View {
                         }) {
                             Image(systemName: "flashlight.on.circle.fill")
                                 .font(.system(size: 50))
+                                .foregroundColor(.black)
                         }
                     }
                     Spacer()
@@ -149,6 +150,7 @@ struct ContentView: View {
                                 ShareLink(item:generateCSV()) {
                                     Image(systemName: "square.and.arrow.up.circle.fill")
                                         .font(.system(size: 50))
+                                        .foregroundColor(.black)
                                 }
                                 .padding(.leading)
                             )
@@ -163,6 +165,7 @@ struct ContentView: View {
     let scanData: [ScanData] = [
             ScanData(asset: " Asset Scan with Minder GO")
         ]
+    
 
     func generateCSV() -> URL {
             var fileURL: URL!
@@ -259,7 +262,8 @@ struct ContentView: View {
                 print("Torch is not available")
             }
         }
-
+    
+    
     
     @ViewBuilder
     private var bottomContainerView: some View {
@@ -298,7 +302,10 @@ struct ContentView: View {
             if vm.scanType == .format {
                 VStack {
                     ScrollView {
-                        Text(setRows.count.description + " assets scanned")
+                        
+                        Text(setRows.count == 1 ? "\(setRows.count.description)" + " asset scanned" : "\(setRows.count.description)" + " assets scanned")
+                        
+                        //Text(setRows.count.description + setRows.count == 1 ?? "asset ", : "assets " + "scanned")
                         ForEach (0..<setRows.count, id: \.self) { i in
                             Text(setRows[i])
                         }
