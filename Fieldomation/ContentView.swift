@@ -91,9 +91,9 @@ struct ContentView: View {
                 .pickerStyle(.segmented)
             }
             Text(vm.headerText)
-                .padding(.top)
                 .textCase(.uppercase)
                 .font(.headline)
+                .padding(.bottom)
             if vm.scanType == .barcode {
                 Toggle("Simultaneous object recognition", isOn: $vm.recognizesMultipleItems)
                 Toggle("Display hyperlink on recognition", isOn: $vm.displayHyperlink)
@@ -102,11 +102,9 @@ struct ContentView: View {
                 Toggle("Prepend Minder URL Path", isOn: $vm.prependsMinderURLPath)
             }
             if vm.scanType == .export {
-                LazyVStack {
+                VStack {
                     HStack {
-                        
                         Spacer()
-                        
                         VStack {
                               Button(action: {
                                   readSetFromFile()
@@ -128,39 +126,19 @@ struct ContentView: View {
                                         Image(systemName: "square.and.arrow.up.circle.fill")
                                             .font(.system(size: 50))
                                     }
-                                    .padding(.leading) // << here can be any distance to center button
+                                    .padding(.leading)
                                 )
-                        
-                        
-                        
-                        
-                        
                     }
-                    
-                    
+                    .padding(.bottom)
                     ScrollView {
                         Text(mySetString)
-                            .padding(16)
-                            .frame(
-                                minWidth: 0,
-                                maxWidth: .infinity,
-                                minHeight: 0,
-                                maxHeight: .infinity,
-                                alignment: .center)
-                        
                     }
-                    
                 }
-                
-                
-                
             }
         }
         .padding(.horizontal)
         .padding(.top)
-        
     }
-        
     let scanData: [ScanData] = [
             ScanData(asset: " Asset Scan with Minder GO")
         ]
