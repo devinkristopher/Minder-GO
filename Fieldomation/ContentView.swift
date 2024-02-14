@@ -75,7 +75,6 @@ struct ContentView: View {
                         Image(systemName: "barcode.viewfinder")
                     }
                     .tag(ScanType.barcode)
-                    
                     Button {
                     } label: {
                         Image(systemName: "rectangle.and.pencil.and.ellipsis")
@@ -89,7 +88,11 @@ struct ContentView: View {
                     }
                     .tag(ScanType.export)
                 }
+                .onChange(of: vm.scanType) {
+                    readSetFromFile()
+                }
                 .pickerStyle(.segmented)
+                
             }
             Text(vm.headerText)
                 .textCase(.uppercase)
