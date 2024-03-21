@@ -237,17 +237,21 @@ struct ContentView: View {
     }
     
     func toggleTorch() {
-        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInTripleCamera, .builtInDualWideCamera, .builtInUltraWideCamera, .builtInWideAngleCamera, .builtInTrueDepthCamera], mediaType: AVMediaType.video, position: .back)
-            guard let device = deviceDiscoverySession.devices.first else {return}
+        
+        let deviceDiscoverySession = AVCaptureDevice.userPreferredCamera
+        
+        guard let device = deviceDiscoverySession else {return}
 
             if device.hasTorch && device.isTorchAvailable {
                 do {
+                    print("device has light and light is available")
                     try device.lockForConfiguration()
                     if device.torchMode == .off {
-                        try device.setTorchModeOn(level: 1.0) // adjust torch intensity here
+                        try device.setTorchModeOn(level: 1.0)
                     } else {
                         device.torchMode = .off
                     }
+                    
                     device.unlockForConfiguration()
                 } catch {
                     print("Torch could not be used")
@@ -255,6 +259,7 @@ struct ContentView: View {
             } else {
                 print("Torch is not available")
             }
+        
         }
     
     
